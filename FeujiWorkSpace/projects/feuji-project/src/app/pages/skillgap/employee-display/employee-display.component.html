@@ -1,0 +1,82 @@
+<section id="category">
+    <span>
+      <label for="" style="font-weight: bolder;">Enter the skill category</label>
+      <select class="form-control" [(ngModel)]="selectedSkillCategory" (change)="onSkillCategoryChange()">
+        <option *ngFor="let t of skillCategories" [value]="t">{{t}}</option>
+      </select>
+    </span>
+  
+    <span>
+      <label for="" style="font-weight: bolder;">Enter the technical category</label>
+      <select class="form-control" [(ngModel)]="selectedTechnicalCategory">
+        <option *ngFor="let t of technicalCategories" [value]="t">{{t}}</option>
+      </select>
+    </span>
+  </section>
+  
+  
+  <div class="container">
+    <div class="row p-4">
+    <table class="table table-bordered ">
+      <thead class="table-dark">
+        <tr>
+          <th></th>
+          
+          <th>Skill Name</th>
+          <th>Skill Type</th>
+          <th>Competency Level</th>
+          <th >Certification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let skill of skills; let i = index">
+          <td class="text-center"> <i class="bi bi-list-ul " style="font-size: 22px;"></i></td>
+         
+             <td>
+  
+  
+              <select class="form-control" [(ngModel)]="skills.">
+                <option value="">select</option>
+                <option *ngFor="let t of technicalCategories" [value]="t">{{t}}</option>
+              </select>
+                
+              </td> 
+          <td>
+         <!-- --------------------------------- -->
+        </td>  
+        <td>
+         <!-- ------------------------------------------ -->
+        </td>
+        <td> 
+           <select class="form-control"  >
+            <option value="">Select Option</option>
+          <option value="">Yes,Certification done</option>
+          <option value="">No,Certification not done</option>
+         </select>
+        </td>
+        </tr>
+       
+     
+      </tbody>
+    </table>
+  </div>
+  
+  
+    <div class="form-group">
+  
+      <div>
+        <button class="btn btn-primary float-lg-end" (click)="addTaskRow()">
+          <i class="bi bi-plus-circle"></i>
+        </button>
+        </div>
+      <label for="submitButton "></label>
+      <button type="submit" class="btn btn-primary  float-lg-end" id="submitButton"  style="margin-right: 30px; font-size: medium;">Submit</button>
+  
+      <label for="submitButton "></label>
+      <button type="submit" class="btn btn-primary  float-lg-end " id="submitButton" style="margin-right: 30px; font-size: medium;">Save</button>
+  
+  
+         
+    </div>
+  
+  </div>

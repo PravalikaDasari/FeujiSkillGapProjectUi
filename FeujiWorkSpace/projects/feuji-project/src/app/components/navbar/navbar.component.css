@@ -1,0 +1,13 @@
+
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content:space-evenly;
+  
+}
+
+.navbar .navbar-brand img {
+  height: 62px;
+  width: 116px;
+  left: 70px;
+}

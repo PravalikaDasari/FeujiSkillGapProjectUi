@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container" style="margin-top: 3%; margin-left: 4%;">
+    <div class="selectbtns">
+      <select id="SkillCategory" name="SkillCategory" class="form-control" (change)="onSelectskillCat($event)"
+        (click)="changeBorderStyle()" aria-label="Default select example" [ngClass]="{'selected-border': isBorderBlue2}">
+        >
+        <option value="" selected disabled style="font-size: 12px;">Select SkillCategory</option>
+        <option *ngFor="let s of skillCategories" value="{{s.referenceDetailValue}}" style="font-size: 12px;">
+          {{s.referenceDetailValue}}
+        </option>
+      </select>
+
+      <select id="TechnicalCategory" name="TechnicalCategory" class="form-control" (change)="onSelectTechCat($event)"
+        (click)="changeBorderStyle2()" aria-label="Default select example" [ngClass]="{'selected-border': isBorderBlue2}">
+        <option value="" selected disabled style="font-size: 12px;">Select SubSkillCategory</option>
+        <option *ngFor="let t of technicalCategories" value="{{t.referenceDetailId}}" style="font-size: 12px;">
+          {{t.referenceDetailValue}}
+        </option>
+      </select>
+    </div>
+    <div class="buttondiv" style="margin-top: 1%;">
+      <button id="btn2" class="btn float-lg-end" style="border-radius: 50%;" (click)="addNewRow()">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+    <div class="display">
+      <table class="table table-bordered">
+        <thead class="table-borderedless sticky-header" style="position: sticky;  top: 5rem;">
+          <tr  style="text-align:left;" class="table-head" class="row1">
+            <th style="width: 2%;">Sno</th>
+            <th>Skill Name</th>
+            <th>Description</th>
+            <th style="width: 2%;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of allSkills; let i= index">
+            <td>{{i+1}}</td>
+            <td>{{e.skillName}}</td>
+            <td>{{e.description}}</td>
+            <td>
+              <button type="button" class="btn btn btn-sm">
+                <i [ngClass]="isEditMode(i) ? 'bi bi-check-circle-fill green-icon' : 'fa-regular fa-pen-to-square'"></i>
+              </button>
+  
+              <button class="btn btn remove-button btn-sm">
+                <i class="fa-solid fa-trash " style="color: red;"></i>
+              </button>
+            </td>
+          </tr>
+          <tr *ngFor="let newRow of newRows; let i = index">
+            <td>{{i+1}}</td>
+            <td>
+              <input placeholder="Enter new skill name" type="text">
+            </td>
+            <td>
+              <input placeholder="Enter new description" type="text">
+            </td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</body>
+</html>

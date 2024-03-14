@@ -1,0 +1,64 @@
+
+.bg-dark{
+  height: 150vh;
+  width: 245px;
+}
+.nav-pills li a span
+{
+color:   rgb(243,117,46);
+font-size:21px;
+}
+.nav-pills li a span:hover
+{
+  color: rgb(243,117,46);
+  font-size:24px;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu.show {
+  display: block;
+}
+
+.plus-sign {
+  float: right;
+  margin-right: 12px;
+}
+.container-fluid{
+  padding-top: 70px;
+}
+.col-2{
+  position: fixed;
+}
+.header{
+  margin: 0;
+}
+#spantag{
+  font-size: 25px; 
+  color: rgb(243,117,46);
+}
+#spantag2{
+  font-size: 25px; 
+  color: rgb(243,117,46);
+}
+#spantag3{
+  font-size: 25px; 
+  color: rgb(243,117,46);
+}
+#itag{
+  font-size: 25px; 
+  color: rgb(243,117,46);
+}
+#itag2{
+  font-size: 25px; 
+  color: rgb(243,117,46);
+}
+#itag3{
+  font-size: 25px; 
+  color: rgb(243,117,46);
+}
+.col-10{
+  margin-left: 17%;
+}
