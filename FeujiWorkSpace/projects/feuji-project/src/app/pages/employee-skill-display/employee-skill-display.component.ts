@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 export class EmployeeSkillDisplayComponent implements OnInit {
   constructor(private http: HttpClient, private empskillService: EmployeeSkillService, private dialog: MatDialog) { }
   empMail: string = '';
-  public employeeSkill: EmployeeUiBean = new EmployeeUiBean(this.empMail, "", '', '', '', '', '', '', '', '', '0')
+  public employeeSkill: EmployeeUiBean = new EmployeeUiBean(this.empMail, "", '', '', '', '',0, '', '', '', '0')
   employeesSkillGet: EmployeeSkillGet[] = [];
   skillCategories: any[] = [];
   technicalcategories: any[] = [];
@@ -343,6 +343,7 @@ export class EmployeeSkillDisplayComponent implements OnInit {
           icon: 'error',
           confirmButtonText: 'Ok',
         });
+        
       }
     );
   }
@@ -353,9 +354,28 @@ export class EmployeeSkillDisplayComponent implements OnInit {
    *  Remove the edit mode status for the deleted row
    */
   onRemove(index: number) {
-    this.empskillService.deleteRow(this.employeesSkillGet[index].employeeSkillId).subscribe((res) => {
+    this.empskillService.deleteRow(this.employeesSkillGet[index].employeeSkillId)
+    .subscribe((res:any) => {
+      alert("delete")
+      alert(res)
+      // Swal.fire({
+      //   title: 'Deleted Sucessfully',
+      //   text: 'skill deleted',
+      //   icon: 'success',
+      //   confirmButtonText: 'Ok',
+      // });
       const response = res;
-    })
+      alert(response)
+    }
+    // ,(error) => {
+    //   Swal.fire({
+    //     title: ' Delete failed!',
+    //     text: 'failed to delete skill details',
+    //     icon: 'error',
+    //     confirmButtonText: 'Ok',
+    //   });
+    // }
+    );
     this.employeesSkillGet.splice(index, 1);
     this.editModes.splice(index, 1);
   }

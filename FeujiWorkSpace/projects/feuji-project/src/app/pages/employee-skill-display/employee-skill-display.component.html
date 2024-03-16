@@ -85,7 +85,7 @@
             </td>
 
             <td>
-              <input class="form-control" value="{{ oneEmployeeSkill.yearsOfExp }}"
+              <input type="number" class="form-control" value="{{ oneEmployeeSkill.yearsOfExp }}"
                 (change)="editedYearOfExp($event,i)" />
             </td>
 
@@ -201,7 +201,7 @@
           </td>
 
           <td>
-            <input class="form-control" [(ngModel)]="newRow.yearsOfExp" />
+            <input type="number" class="form-control" [(ngModel)]="newRow.yearsOfExp" />
           </td>
 
           <td>
