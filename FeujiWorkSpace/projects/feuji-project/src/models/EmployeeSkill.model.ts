@@ -6,7 +6,7 @@ export class EmployeeUiBean{
 	public  skillId:string,
 	public  skillTypeId:string,
 	public  competencyLevelId:string,
-	public  yearsOfExp:string,
+	public  yearsOfExp:number,
 	public  certification:string,
 	public  description:string,
 	public  comments:string,	
